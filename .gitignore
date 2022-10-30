@@ -1,0 +1,5 @@
+# Project exclude paths
+/maven-mybatis-1/target/
+/maven-mybatis-2/target/
+/maven-mybatis-3/target/
+/maven-mybatis-web/target/

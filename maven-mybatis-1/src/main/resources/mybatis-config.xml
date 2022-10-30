@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        <!--  dtd限制了文件结构  -->
+<configuration>
+
+    <!--
+    environments：配置数据库连接环境信息。可以配置多个environment，通过default属性切换不同的environment
+    -->
+    <environments default="development">
+        <environment id="development">
+            <!--  事务管理
+                  JDBC MANAGED
+              -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="smlz.1314"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--加载sql映射文件-->
+        <!--  resources属性自动从类的根路径下开始查找资源  -->
+        <mapper resource="CarMapper.xml"/>
+        <!--  url属性：绝对路径加载  -->
+        
+        <!--Mapper代理方式-->
+        <package name="com.ss.mapper"/>
+    </mappers>
+</configuration>
